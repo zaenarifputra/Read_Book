@@ -19,37 +19,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:layout_margin="10dp"
-            android:padding="10dp"
-            android:src="@drawable/ic_back_white"/>
+            android:layout_margin="@dimen/spacing_small"
+            android:padding="@dimen/spacing_small"
+            android:src="@drawable/ic_back_white"
+            android:contentDescription="@string/cd_image" />
 
         <ImageView
             android:id="@+id/iconIv"
             android:layout_width="110dp"
             android:layout_height="110dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/logo"/>
+            android:layout_marginTop="@dimen/spacing_huge"
+            android:src="@drawable/logo"
+            android:contentDescription="@string/cd_image" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/iconIv"
-            android:layout_marginTop="10dp"
-            android:text="Create New Account"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/text_create_new_account"
             android:textColor="@color/white"
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="28sp"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="@dimen/font_title_content" />
 
     </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="225dp">
+        android:layout_marginStart="@dimen/spacing_huge"
+        android:layout_marginEnd="@dimen/spacing_huge"
+        android:layout_marginTop="@dimen/spacing_big">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -69,11 +71,12 @@
                     android:background="@drawable/shape_edittext01"
                     android:drawableStart="@drawable/ic_person_gray"
                     android:drawablePadding="10dp"
-                    android:hint="Name"
+                    android:hint="@string/text_name"
                     android:inputType="textPersonName|textCapWords"
-                    android:padding="10dp"
+                    android:padding="@dimen/spacing_small"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/gray01"/>
+                    android:textColorHint="@color/gray01"
+                    android:autofillHints="username" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/nameTil"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/spacing_tiny"
                 app:hintEnabled="false">
 
                 <EditText
@@ -92,12 +95,13 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_edittext01"
                     android:drawableStart="@drawable/ic_email_gray"
-                    android:drawablePadding="10dp"
-                    android:hint="Email"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:hint="@string/text_email"
                     android:inputType="textEmailAddress"
-                    android:padding="10dp"
+                    android:padding="@dimen/spacing_small"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/gray01"/>
+                    android:textColorHint="@color/gray01"
+                    android:autofillHints="emailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/emailTil"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/spacing_tiny"
                 app:passwordToggleEnabled="true"
                 app:hintEnabled="false">
 
@@ -117,12 +121,13 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_edittext01"
                     android:drawableStart="@drawable/ic_lock_gray"
-                    android:drawablePadding="10dp"
-                    android:hint="Password"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:hint="@string/text_password"
                     android:inputType="textPassword"
-                    android:padding="10dp"
+                    android:padding="@dimen/spacing_small"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/gray01"/>
+                    android:textColorHint="@color/gray01"
+                    android:autofillHints="password" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,7 +137,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/passwordTil"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/spacing_tiny"
                 app:passwordToggleEnabled="true"
                 app:hintEnabled="false">
 
@@ -142,12 +147,13 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_edittext01"
                     android:drawableStart="@drawable/ic_lock_gray"
-                    android:drawablePadding="10dp"
-                    android:hint="Confirm Password"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:hint="@string/text_confirm_password"
                     android:inputType="textPassword"
-                    android:padding="10dp"
+                    android:padding="@dimen/spacing_small"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/gray01"/>
+                    android:textColorHint="@color/gray01"
+                    android:autofillHints="password" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -157,9 +163,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cPasswordTil"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/spacing_large"
                 android:background="@drawable/shape_button01"
-                android:text="Register"
+                android:text="@string/text_register"
                 android:textColor="@color/white"/>
 
         </RelativeLayout>

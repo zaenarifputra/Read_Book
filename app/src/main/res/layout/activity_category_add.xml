@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,80 +8,107 @@
     tools:context=".CategoryAddActivity">
 
     <!--Toolbar-->
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbarRl"
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        android:background="@drawable/shape_toolbar01">
+        android:background="@drawable/shape_toolbar01"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <!--Back Button-->
         <ImageButton
             android:id="@+id/backBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginStart="@dimen/spacing_smaller"
             android:background="@android:color/transparent"
             android:padding="5dp"
-            android:src="@drawable/ic_back_white"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_back_white"
+            android:contentDescription="@string/cd_image" />
 
         <ImageView
             android:id="@+id/iconIv"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/backBtn"
-            android:src="@drawable/logo"/>
+            android:layout_marginTop="@dimen/spacing_huge_slight"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/cd_image" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/iconIv"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-condensed"
             android:scrollbarSize="128sp"
-            android:text="Add a new category"
+            android:text="@string/text_add_a_new_category"
+            android:layout_marginBottom="@dimen/spacing_smaller"
             android:textColor="@color/white"
-            android:textSize="28sp"/>
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/iconIv"
+            app:layout_constraintStart_toStartOf="@+id/iconIv" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--Input category-->
+
+    <!--Add category button-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/categoryTil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="230dp"
-        app:hintEnabled="false">
-
-        <EditText
-            android:id="@+id/categoryEt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_edittext01"
-            android:drawableStart="@drawable/ic_category_gray"
-            android:drawablePadding="10dp"
-            android:hint="Category Title"
-            android:inputType="textPersonName|textCapSentences"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/gray01"/>
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/submitBtn"
+        app:layout_constraintEnd_toEndOf="@+id/categoryEt"
+        app:layout_constraintStart_toStartOf="@+id/categoryEt"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRl">
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--Add category button-->
     <Button
         android:id="@+id/submitBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/categoryTil"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="20dp"
         android:background="@drawable/shape_button01"
-        android:text="Submit"
-        android:textColor="@color/white"/>
+        android:text="@string/btn_submit"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginStart="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_large"
+        app:layout_constraintEnd_toEndOf="@+id/categoryEt"
+        app:layout_constraintStart_toStartOf="@+id/categoryEt"
+        app:layout_constraintTop_toBottomOf="@+id/categoryEt" />
 
-</RelativeLayout>
+    <EditText
+        android:id="@+id/categoryEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_edittext01"
+        android:drawableStart="@drawable/ic_category_gray"
+        android:drawablePadding="@dimen/spacing_small"
+        android:hint="@string/hint_text_category_title"
+        android:inputType="textPersonName|textCapSentences"
+        android:padding="@dimen/spacing_small"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray01"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginStart="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRl"
+        android:autofillHints="name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,34 +8,42 @@
     tools:context=".DashboardAdminActivity">
 
     <!--Toolbar-->
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbarRl"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="@drawable/shape_toolbar02">
+        android:background="@drawable/shape_toolbar02"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/titleTv"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:text="Dashboard Admin"
+            android:layout_marginTop="@dimen/spacing_weeny"
+            android:text="@string/text_dashboard_admin"
             android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/subTitleTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/titleTv"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="119dp"
-            android:layout_marginTop="-21dp"
-            android:layout_marginEnd="122dp"
-            android:text="abc@example.com"
-            android:textColor="@color/white" />
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:text="@string/text_abc_example_com"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/titleTv"
+            app:layout_constraintStart_toStartOf="@+id/titleTv"
+            app:layout_constraintTop_toBottomOf="@+id/titleTv" />
 
         <ImageButton
             android:id="@+id/logoutBtn"
@@ -43,11 +51,15 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="10dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_logout_white" />
+            android:src="@drawable/ic_logout_white"
+            android:layout_marginTop="@dimen/spacing_regular"
+            android:layout_marginEnd="@dimen/spacing_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="-3dp" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--Search-->
     <EditText
@@ -55,25 +67,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbarRl"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:background="@color/white"
         android:drawableStart="@drawable/ic_search_gray"
-        android:hint="Search"
+        android:hint="@string/text_search"
         android:padding="10dp"
-        android:textColorHint="@color/gray01"/>
+        android:textColorHint="@color/gray01"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRl" />
 
     <!--Categories-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categoriesRv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/searchEt"
         android:layout_above="@id/bttomLl"
-        android:layout_margin="5dp"
-        tools:listitem="@layout/row_category"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        android:layout_below="@id/searchEt"
+        android:layout_marginTop="130dp"
+        android:layout_marginBottom="75dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/bttomLl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchEt"
+        tools:listitem="@layout/row_category" />
 
 
     <!--Bottom layout-->
@@ -81,36 +101,40 @@
         android:id="@+id/bttomLl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp">
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <!--Add Catogory-->
         <Button
             android:id="@+id/addCategoryBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
             android:background="@drawable/shape_button01"
             android:minHeight="50dp"
-            android:text="+ Add Category"
+            android:text="@string/text_add_category"
             android:textAllCaps="false"
-            android:layout_marginEnd="10dp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
         <!--Add Pdf-->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addPdfFab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/ic_pdf_white"
             app:backgroundTint="@color/purple_900"
             app:fabCustomSize="50dp"
-            android:src="@drawable/ic_pdf_white"
-            app:tint="@color/white"/>
+            app:tint="@color/white"
+            android:contentDescription="@string/cd_btn_add" />
 
 
     </LinearLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

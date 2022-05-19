@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,45 +8,57 @@
     tools:context=".PdfListAdminActivity">
 
     <!--Toolbar-->
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbarRl"
-        android:background="@drawable/shape_toolbar02"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize">
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/shape_toolbar02"
+        app:layout_constraintTop_toTopOf="parent">
 
         <!--Back button-->
         <ImageButton
             android:id="@+id/backBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_back_white"
-            android:background="@android:color/transparent"
             android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            android:padding="5dp"/>
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:background="@android:color/transparent"
+            android:padding="5dp"
+            android:src="@drawable/ic_back_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/cd_image" />
 
         <!--Title-->
         <TextView
             android:id="@+id/titleTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Books"
-            android:textColor="@color/white"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:textStyle="bold"/>
+            android:layout_marginTop="@dimen/spacing_smaller"
+            android:text="@string/text_books"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <!--Subtitle-->
         <TextView
             android:id="@+id/subTitleTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="Category"
+            android:layout_below="@id/titleTv"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/titleTv"/>
+            android:text="@string/text_category"
+            android:layout_marginTop="@dimen/spacing_weeny"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/titleTv"
+            app:layout_constraintStart_toStartOf="@+id/titleTv"
+            app:layout_constraintTop_toBottomOf="@+id/titleTv" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--Search-->
     <EditText
@@ -54,25 +66,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbarRl"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
         android:background="@color/white"
         android:drawableStart="@drawable/ic_search_gray"
         android:drawablePadding="10dp"
-        android:hint="Search"
+        android:layout_marginTop="@dimen/spacing_regular"
+        android:layout_marginStart="@dimen/spacing_regular"
+        android:layout_marginEnd="@dimen/spacing_regular"
+        android:hint="@string/text_search"
         android:padding="10dp"
         android:textColor="@color/black"
-        android:textColorHint="@color/gray02" />
+        android:textColorHint="@color/gray02"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRl" />
 
     <!--Pdf/Book List-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/booksRv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/searchEt"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/spacing_small"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/searchEt"
         tools:listitem="@layout/row_pdf_admin"/>
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

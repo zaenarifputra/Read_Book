@@ -22,7 +22,8 @@
             android:src="@drawable/ic_back_white"
             android:layout_margin="10dp"
             android:background="@android:color/transparent"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:contentDescription="@string/cd_image" />
 
         <!--Icon Image-->
         <ImageView
@@ -38,7 +39,7 @@
             android:id="@+id/titleTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add a New Book"
+            android:text="@string/text_add_a_new_book"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_below="@id/iconIv"
@@ -57,7 +58,8 @@
             android:layout_marginBottom="10dp"
             android:background="@android:color/transparent"
             android:padding="5dp"
-            android:src="@drawable/ic_attach_white" />
+            android:src="@drawable/ic_attach_white"
+            android:contentDescription="@string/cd_image" />
     </RelativeLayout>
 
     <!--Inout title-->
@@ -76,7 +78,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/shape_edittext01"
             android:drawableStart="@drawable/ic_pdf_gray"
-            android:hint="Book Title"
+            android:hint="@string/text_book_title"
             android:drawablePadding="10dp"
             android:inputType="textPersonName|textCapWords"
             android:padding="10dp"
@@ -104,8 +106,9 @@
             android:background="@drawable/shape_edittext01"
             android:padding="10dp"
             android:textColor="@color/black"
+            android:drawablePadding="@dimen/spacing_small"
             android:textColorHint="@color/gray01"
-            android:hint="Book Description"
+            android:hint="@string/text_book_description"
             android:inputType="textMultiLine|textCapSentences"
             android:textSize="16sp"
             android:drawableStart="@drawable/ic_pdf_gray"
@@ -123,15 +126,15 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/shape_edittext01"
-        android:drawableStart="@drawable/ic_category_gray"
-        android:drawableEnd="@drawable/ic_down_gray"
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
-        android:hint="Book Category"
+        android:hint="@string/text_book_category"
         android:padding="10dp"
         android:textColor="@color/black"
         android:textColorHint="@color/gray01"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/ic_category_gray"
+        app:drawableEndCompat="@drawable/ic_down_gray" />
 
     <!--Button: upload pdf-->
 
@@ -142,7 +145,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="10dp"
-        android:text="Update"
+        android:text="@string/text_update"
         android:background="@drawable/shape_button01"
         android:layout_below="@id/categoryTv"
         android:textColor="@color/white"/>

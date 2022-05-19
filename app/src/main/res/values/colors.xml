@@ -11,4 +11,41 @@
     <color name="gray01">#c5c5c5</color>
     <color name="gray02">#777777</color>
     <color name="gray03">#EDEDED</color>
+
+    <!-- Primary-->
+    <color name="color_blue50">#08C0FF</color>
+    <color name="color_white">#FAFAFA</color>
+    <color name="color_black">#121212</color>
+
+    <color name="color_gray1">#F1F2F6</color>
+    <color name="color_gray2">#DEDEDE</color>
+    <color name="color_gray3">#B3B3B3</color>
+    <color name="color_gray4">#404852</color>
+    <color name="color_gray5">#A6535353</color>
+
+    <color name="color_transparent">#00000000</color>
+
+    <!-- SHADES AND TINTS-->
+    <color name="color_blue60">#0094C7</color>
+    <color name="color_blue40">#B3EBFF</color>
+    <color name="color_blue20">#F0FBFF</color>
+
+    <color name="color_green80">#24754E</color>
+    <color name="color_green60">#2F9866</color>
+    <color name="color_green50">#34A770</color>
+    <color name="color_green40">#C5EDDA</color>
+    <color name="color_green20">#F3FBF8</color>
+
+    <color name="color_yellow80">#997700</color>
+    <color name="color_yellow60">#C79B00</color>
+    <color name="color_yellow50">#EBB700</color>
+    <color name="color_yellow40">#FFEEB3</color>
+    <color name="color_yellow20">#FFFCF0</color>
+
+    <color name="color_red80">#941605</color>
+    <color name="color_red60">#C01D07</color>
+    <color name="color_red50">#F85640</color>
+    <color name="color_red40">#FCBEB5</color>
+    <color name="color_red20">#FEF2F0</color>
+
 </resources>
