@@ -129,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_pdf_white"
-            app:backgroundTint="@color/purple_900"
+            app:backgroundTint="@color/bakblue"
             app:fabCustomSize="50dp"
             app:tint="@color/white"
             android:contentDescription="@string/cd_btn_add" />
