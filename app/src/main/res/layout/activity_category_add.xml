@@ -10,7 +10,7 @@
     <!--Toolbar-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbarRl"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="220dp"
         android:background="@drawable/shape_toolbar01"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,7 @@
         <!--Back Button-->
         <ImageButton
             android:id="@+id/backBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_small"
             android:layout_marginStart="@dimen/spacing_smaller"
@@ -33,7 +33,7 @@
 
         <ImageView
             android:id="@+id/iconIv"
-            android:layout_width="110dp"
+            android:layout_width="0dp"
             android:layout_height="110dp"
             android:layout_below="@id/backBtn"
             android:layout_marginTop="@dimen/spacing_huge_slight"
@@ -45,12 +45,13 @@
             android:contentDescription="@string/cd_image" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/iconIv"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-condensed"
             android:scrollbarSize="128sp"
+            android:textAlignment="center"
             android:text="@string/text_add_a_new_category"
             android:layout_marginBottom="@dimen/spacing_smaller"
             android:textColor="@color/white"
@@ -78,7 +79,7 @@
 
     <Button
         android:id="@+id/submitBtn"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/categoryTil"
         android:background="@drawable/shape_button01"
@@ -93,7 +94,7 @@
 
     <EditText
         android:id="@+id/categoryEt"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_edittext01"
         android:drawableStart="@drawable/ic_category_gray"

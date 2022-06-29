@@ -19,7 +19,8 @@
 
         <TextView
             android:id="@+id/titleTv"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:textAlignment="center"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/spacing_weeny"
@@ -32,12 +33,12 @@
 
         <TextView
             android:id="@+id/subTitleTv"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginTop="@dimen/spacing_smaller"
             android:text="@string/text_abc_example_com"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -47,7 +48,7 @@
 
         <ImageButton
             android:id="@+id/logoutBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
@@ -64,7 +65,7 @@
     <!--Search-->
     <EditText
         android:id="@+id/searchEt"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbarRl"
         android:layout_marginTop="16dp"
@@ -82,7 +83,7 @@
     <!--Categories-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categoriesRv"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_above="@id/bttomLl"
         android:layout_below="@id/searchEt"
@@ -99,7 +100,7 @@
     <!--Bottom layout-->
     <LinearLayout
         android:id="@+id/bttomLl"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -126,14 +127,13 @@
         <!--Add Pdf-->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addPdfFab"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_pdf_white"
             app:backgroundTint="@color/bakblue"
             app:fabCustomSize="50dp"
             app:tint="@color/white"
             android:contentDescription="@string/cd_btn_add" />
-
 
     </LinearLayout>
 

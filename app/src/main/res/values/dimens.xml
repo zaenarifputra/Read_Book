@@ -18,6 +18,8 @@
     <dimen name="rad_large">15dp</dimen>
 
     <!-- Spacing Between Two Views -->
+    <dimen name="spacing_big_one">550dp</dimen>
+    <dimen name="spacing_big_small">340dp</dimen>
     <dimen name="spacing_big">225dp</dimen>
     <dimen name="spacing_huger_more">150dp</dimen>
     <dimen name="spacing_huger">120dp</dimen>

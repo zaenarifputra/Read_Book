@@ -11,22 +11,23 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="200dp"
-        android:src="@drawable/logo"
         android:layout_marginTop="@dimen/spacing_big"
+        android:contentDescription="@string/cd_image"
+        android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/cd_image" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/nama"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
         android:fontFamily="@font/montserrat_semibold"
         android:text="@string/title_read_book"
-        android:layout_marginTop="@dimen/spacing_large"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="@dimen/font_title"
         app:layout_constraintEnd_toEndOf="@+id/logo"

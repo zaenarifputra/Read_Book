@@ -46,5 +46,6 @@
     <string name="text_register">Register</string>
     <string name="title_read_book">Read Book</string>
     <string name="text_by_cyber">By Cyber</string>
+    <string name="text_please_login">Please Login</string>
 
 </resources>

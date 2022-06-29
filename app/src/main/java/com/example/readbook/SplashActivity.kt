@@ -7,6 +7,7 @@ import android.os.Handler
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.readbook.databinding.SplashBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -15,13 +16,16 @@ import com.google.firebase.database.ValueEventListener
 
 class SplashActivity : AppCompatActivity() {
 
+    private lateinit var binding: SplashBinding
+
     private lateinit var firebaseAuth: FirebaseAuth
 
     private val splasScreentimeout : Long= 2000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.splash)
+        binding = SplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
 
@@ -29,9 +33,9 @@ class SplashActivity : AppCompatActivity() {
         val gm = AnimationUtils.loadAnimation(this, R.anim.gm);
         val btt = AnimationUtils.loadAnimation(this, R.anim.btt);
 
-        val logo = findViewById(R.id.logo) as ImageView
-        val nama = findViewById(R.id.nama) as TextView
-        val pencipta = findViewById(R.id.pencipta) as TextView
+        val logo = binding.logo
+        val nama = binding.nama
+        val pencipta = binding.pencipta
 
 
         logo.startAnimation(gm)
